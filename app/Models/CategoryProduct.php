@@ -27,4 +27,10 @@ class CategoryProduct extends Model
     {
        return $this->belongsTo(Product::class);
     }
+
+    public function scopeSearch($query, $keyword)
+    {
+        $query->where('name', 'LIKE', '%'.$keyword.'%');
+        return $query;
+    }
 }
