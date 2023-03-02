@@ -60,7 +60,7 @@ class CategoryService {
             $category = $this->modelCategory::where('id',$id)->first();
             if(!$category) throw new Exception("Category not found");
 
-            return $this->responseSuccess(200, 'Success Create Category.', new CategoryResource($category));
+            return $this->responseSuccess(200, 'Success.', new CategoryResource($category));
         } catch (\Exception $e) {
             return $this->responseFailed($e->getMessage());
         }
