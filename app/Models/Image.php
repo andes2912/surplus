@@ -18,4 +18,10 @@ class Image extends Model
         $payload['enable']  = $request->enable;
         return $payload;
     }
+
+    public function scopeSearch($query, $keyword)
+    {
+        $query->where('name', 'LIKE', '%'.$keyword.'%');
+        return $query;
+    }
 }

@@ -31,7 +31,12 @@ class CategoryProductService {
             $query->when(
                 $keyword != "",
                 function ($q) use ($keyword) {
-                    $q->search($keyword);
+                    $q->with('category', function($a) use($keyword){
+                        $a->search($keyword);
+                    });
+                    $q->with('product', function($a) use($keyword){
+                        $a->search($keyword);
+                    });
                 }
             );
             $itemData = $query->paginate($limit);

@@ -19,4 +19,10 @@ class Product extends Model
         $payload['enable']      = $request->enable ?? null;
         return $payload;
     }
+
+    public function scopeSearch($query, $keyword)
+    {
+        $query->where('name', 'LIKE', '%'.$keyword.'%');
+        return $query;
+    }
 }
