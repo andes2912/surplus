@@ -16,3 +16,7 @@ Dibangun menggunakan [Laravel](http://laravel.com), the best existing PHP framew
 * Run `cp .env.example .env` for create .env file
 * Run `php artisan migrate --seed` for migration database
 * Run `php artisan storage:link` for create folder storage
+
+## Documentation API
+
+* You can use Documentation API for testing in here [POSTMAN](https://documenter.getpostman.com/view/8245567/2s93CUGpd6)
